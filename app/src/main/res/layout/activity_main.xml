@@ -24,7 +24,6 @@
     <ImageButton
         android:id="@+id/mic"
         android:clickable="true"
-        android:onClick="ouvir"
         android:focusable="true"
         android:layout_width="40dp"
         android:layout_height="40dp"
