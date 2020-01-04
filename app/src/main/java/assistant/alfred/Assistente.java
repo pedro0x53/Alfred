@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 public class Assistente {
 
-    protected void processar(ArrayList<String> res, TextView tv) {
-        for (String word: res) {
-            tv.setText(word);
-        }
+    public void processar(ArrayList<String> data, TextView tv) {
+        String[] code = RegexController.getResponse(data);
+        String action = "Code: " + code[0] + "\nRequest: " + code[1];
+        tv.setText(action);
     }
 }
