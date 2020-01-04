@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="assistant.alfred" >
 
-    <uses-feature android:name="android.permission.RECORD_AUDIO" android:required="false" />
+    <uses-feature android:name="android.permission.RECORD_AUDIO" android:required="true"/>
 
     <application
         android:theme="@style/AppTheme"
