@@ -10,10 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityController {
-    private Activity context;
+    public Activity context;
     private PackageManager packageManager;
     private Intent speechRecognizer;
-    private Intent launcher;
 
     public ActivityController(Activity context) {
         this.context = context;
