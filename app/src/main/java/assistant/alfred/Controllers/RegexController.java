@@ -5,7 +5,7 @@ import static assistant.alfred.Utils.RegexStrings.*;
 
 public class RegexController {
     public static String[] getResponse(ArrayList<String> reqList) {
-        String[] res = {"-1", ""};
+        String[] res = {"-1", reqList.get(0)};
         for(String req: reqList) {
             if(req.matches(REGEX_START_LISTEN)) {
                 res[0] = "10";

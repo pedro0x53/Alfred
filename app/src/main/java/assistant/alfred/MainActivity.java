@@ -2,33 +2,29 @@ package assistant.alfred;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import java.util.ArrayList;
 import assistant.alfred.Controllers.ActivityController;
 
 public class MainActivity extends AppCompatActivity {
     private Assistente a;
-    private TextView tv;
-    private PackageManager packageManager;
-    private ActivityController activityController;
+    final Activity mainActivity = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        activityController = new ActivityController(this);
+        ActivityController activityController = new ActivityController(mainActivity);
 
-        a = new Assistente(activityController, packageManager);
+        a = new Assistente(activityController);
 
-        tv = findViewById(R.id.mainResponse);
-        tv.setText("");
+
 
         ImageButton mic = findViewById(R.id.mic);
         mic.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     a.startListen();
                 }
                 catch (Exception e) {
-                    tv.setText(e.getMessage());
+                    System.out.println(e.getMessage());
                 }
             }
         });
@@ -52,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             ArrayList<String> res = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             try {
                 if (!(res.isEmpty())) {
-                    a.process(res, tv);
+                    a.process(res);
                 }
             }
             catch (NullPointerException e) {
