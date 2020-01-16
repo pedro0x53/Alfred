@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.ImageButton;
+
 import java.util.ArrayList;
 import assistant.alfred.Controllers.ActivityController;
 
 public class MainActivity extends AppCompatActivity {
     private Assistente a;
+
     final Activity mainActivity = this;
 
     @Override
@@ -23,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
         ActivityController activityController = new ActivityController(mainActivity);
 
         a = new Assistente(activityController);
-
-
 
         ImageButton mic = findViewById(R.id.mic);
         mic.setOnClickListener(new View.OnClickListener() {
