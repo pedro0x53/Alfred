@@ -3,7 +3,10 @@ package assistant.alfred.Controllers;
 import android.app.Activity;
 import android.view.Gravity;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+
+import java.util.concurrent.TimeUnit;
 
 import assistant.alfred.R;
 
@@ -11,10 +14,13 @@ public class MessageController {
 
     private Activity context;
     private LinearLayout chat;
+    private ScrollView scrollView;
 
     public MessageController(Activity context) {
         this.context = context;
+
         chat = context.findViewById(R.id.chat);
+        scrollView = context.findViewById(R.id.scrollView);
     }
 
     public void createMessage(String content, int code) {
@@ -40,6 +46,15 @@ public class MessageController {
 
         message.setLayoutParams(params);
         message.setText(content);
+
         chat.addView(message);
+
+        scrollView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        }, 100L);
     }
 }
+
