@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Alfred</string>
+    <string name="title_menu_tutorial">Tutorial</string>
 </resources>
