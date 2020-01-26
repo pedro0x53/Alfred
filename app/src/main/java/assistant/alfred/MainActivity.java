@@ -22,25 +22,28 @@ import assistant.alfred.Controllers.ActivityController;
 
 public class MainActivity extends AppCompatActivity {
     private Assistente a;
+    private ActivityController activityController;
     final Activity mainActivity = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityController activityController = new ActivityController(mainActivity);
-        Toolbar toolbar =  findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        activityController = new ActivityController(mainActivity);
 
         a = new Assistente(activityController);
         a.verifyFiles();
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
         ImageButton mic = findViewById(R.id.mic);
         mic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     a.startListen();
-
                 }
                 catch (Exception e) {
                     System.out.println(e.getMessage());
@@ -49,22 +52,24 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_tutorial) {
-            a.tutorial();
+        switch(item.getItemId()) {
+            case R.id.tutorial_option:
+                a.tutorial();
+                return true;
+            case R.id.clear_option:
+                activityController.clearScreen();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
