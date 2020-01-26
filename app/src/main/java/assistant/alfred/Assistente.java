@@ -1,28 +1,14 @@
 package assistant.alfred;
 
-import android.annotation.SuppressLint;
 import android.content.pm.ApplicationInfo;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.nio.file.Files;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 import assistant.alfred.Controllers.ActivityController;
@@ -77,13 +63,12 @@ class Assistente{
         }
     }
 
-
-
-
     public void tutorial(){
-        messageController.createMessage(Strings.SALUTATION,2);
-        messageController.createMessage(Strings.TUTORIAL,2);
-        messageController.createMessage(Strings.NAMES_FUNCTIONS, 2);
+        for(final String message : Strings.TUTORIAL) {
+            messageController.createMessage(message, 2);
+        }
+
+        messageController.scrollUp();
     }
     private void runApp(String req) {
         boolean status = false;
