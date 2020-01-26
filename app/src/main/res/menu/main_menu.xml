@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/action_tutorial"
-        android:title="@string/title_menu_tutorial" />
+        android:id="@+id/tutorial_option"
+        android:title="@string/tutorial_option" />
+
+    <item
+        android:id="@+id/clear_option"
+        android:title="@string/clear_option" />
 </menu>
