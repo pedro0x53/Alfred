@@ -6,8 +6,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import java.util.concurrent.TimeUnit;
-
 import assistant.alfred.R;
 
 public class MessageController {
@@ -18,7 +16,6 @@ public class MessageController {
 
     public MessageController(Activity context) {
         this.context = context;
-
         chat = context.findViewById(R.id.chat);
         scrollView = context.findViewById(R.id.scrollView);
     }
@@ -49,6 +46,15 @@ public class MessageController {
 
         chat.addView(message);
 
+        scrollDown();
+
+    }
+
+    public void clearMessages() {
+        chat.removeAllViews();
+    }
+
+    public void scrollDown() {
         scrollView.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -56,5 +62,13 @@ public class MessageController {
             }
         }, 100L);
     }
-}
 
+    public void scrollUp() {
+        scrollView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(ScrollView.FOCUS_UP);
+            }
+        }, 100L);
+    }
+}

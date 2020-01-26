@@ -13,9 +13,12 @@ public class ActivityController {
     public Activity context;
     private PackageManager packageManager;
     private Intent speechRecognizer;
+    private MessageController messageController;
 
     public ActivityController(Activity context) {
         this.context = context;
+
+        messageController = new MessageController(context);
 
         packageManager = context.getPackageManager();
 
@@ -46,6 +49,10 @@ public class ActivityController {
     public void run(ApplicationInfo appInfo) {
         Intent launcher = packageManager.getLaunchIntentForPackage(appInfo.packageName);
         context.startActivity(launcher);
+    }
+
+    public void clearScreen() {
+        messageController.clearMessages();
     }
 
 }
