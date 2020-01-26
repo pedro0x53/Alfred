@@ -6,7 +6,4 @@
     android:layout_height="wrap_content"
     android:textSize="15sp"
     android:fontFamily="@font/roboto"
-    android:paddingLeft="15dp"
-    android:paddingTop="8dp"
-    android:paddingRight="15dp"
-    android:paddingBottom="8dp" />
+    android:padding="10dp" />
