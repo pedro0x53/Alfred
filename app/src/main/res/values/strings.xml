@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Alfred</string>
-    <string name="title_menu_tutorial">Tutorial</string>
+    <string name="tutorial_option">Como funciona?</string>
+    <string name="clear_option">Limpar tela</string>
+    <string name="mic_description">Icone do microfone</string>
+    <string name="logo_description">Logo</string>
 </resources>
