@@ -36,7 +36,7 @@
  
 ### COMO FUNCIONA?
   
-  O fluxo principal da aplicação é definido por: ouvir a solicitação > processar o texto > executar a função
+  O fluxo principal da aplicação é definido por: ouvir a solicitação > processar o texto > executar a função.
   O sistema utiliza da biblioteca de reconhecimento de voz padão do Android, que funciona como uma activity, retornando um etor de strings com as possíveis frases identificadas no resultado da atividade (onActivityResult).
 
   Para adicionar novas funções é necessário alterar alguns poucos arquivos, para a compreensão completa sobre o fluxo de processamento siga essa ordem abaixo:
