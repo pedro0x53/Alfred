@@ -2,7 +2,9 @@
 ## Assistente de Voz
 
   O Alfred é um assistente virtual, que pode ser ativado por comandos de voz. Desenvolvido pelos alunos Moyses Miranda, João Sousa, no IFCE Campus Maracanaú, utilizando a linguagem de programação Java, durante o 3º semestre do curso de Ciência da Computação.
+  
   Com o objetivo principal do “Projeto Alfred” é aplicar conceitos de OO, inicialmente, não utilizará banco de dados e estará disponível apenas para o Sistema Operacional Android 6.0 ou superior.
+  
   O layout segue, basicamente, o mesmo estilo dos assistentes existentes, um chat que exibe as mensagens trocadas entre usuário e asistente, atravás dos comandos solicitados.
 
 
@@ -32,11 +34,12 @@
  
  
 ### COMO FUNCIONA?
+ 
+  O sistema utiliza da biblioteca de reconhecimento de voz padão do Android, que funciona como uma activity, retornando um etor de strings com as possíveis frases identificadas no resultado da atividade (onActivityResult).
   
   O fluxo principal da aplicação é definido por: ouvir a solicitação > processar o texto > executar a função.
-  O sistema utiliza da biblioteca de reconhecimento de voz padão do Android, que funciona como uma activity, retornando um etor de strings com as possíveis frases identificadas no resultado da atividade (onActivityResult).
 
-  Para adicionar novas funções é necessário alterar alguns poucos arquivos, para a compreensão completa sobre o fluxo de processamento siga essa ordem abaixo:
+  Para adicionar novas funções e compreender completamente o fluxo de processamento é necessário alterar alguns poucos arquivos, siga essa ordem abaixo:
 
   1. Utils/RegexStrings.java, uma espressão regular que identifica o padrão da frase para a acionar a nova função, deverá ser adicionada.
   1. Controllers/RegexController.java novo condicional, definido um novo código de resposta, que deve ser um inteiro, a variável "req" deve ser sempre retornada como segundo valor do vetor "res".
