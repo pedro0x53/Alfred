@@ -2,7 +2,8 @@
 ## Assistente de Voz
 
   O Alfred é um assistente virtual, que pode ser ativado por comandos de voz. Desenvolvido pelos alunos Moyses Miranda, João Sousa, no IFCE Campus Maracanaú, utilizando a linguagem de programação Java, durante o 3º semestre do curso de Ciência da Computação.
-  Com o objetivo princiapl do “Projeto Alfred” é aplicar conceitos de OO, inicialmente, não utilizará banco de dados e estará disponível apenas para o Sistema Operacional Android 6.0 ou superior.
+  Com o objetivo principal do “Projeto Alfred” é aplicar conceitos de OO, inicialmente, não utilizará banco de dados e estará disponível apenas para o Sistema Operacional Android 6.0 ou superior.
+  O layout segue, basicamente, o mesmo estilo dos assistentes existentes, um chat que exibe as mensagens trocadas entre usuário e asistente, atravás dos comandos solicitados.
 
 
 ### OBJETIVOS
@@ -13,12 +14,8 @@
 
 
 ### ESTRUTURA
-  
-  Utilizadno uma estrutura focada, para que o projeto seja compreendido por alunos de todos os níveis.
 
-  O layout segue, basicamente, o mesmo estilo dos assistentes existentes, um chat que exibe as mensagens trocadas entre usuário e asistente, atravás dos comandos solicitados.
-
-  O projeto foi dividido em 3 tripos de classes: Principais, Controladoras e Utilidades.
+  Utilizando uma estrutura focada, para que o projeto seja compreendido por alunos de todos os níveis, o projeto foi dividido em 3 tripos de classes: Principais, Controladoras e Utilidades.
   
   #### Principal
   - Assistente, objeto principal, onde as funções predefinidas estão localizadas.
